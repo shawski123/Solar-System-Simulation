@@ -159,6 +159,8 @@ int main()
 
     sf::Vector2f parallaxOffset({ 0,0 });
 
+    float planetSpeed = DEFAULT_SPEED;
+
     while (window.isOpen())
     {
         while (const std::optional event = window.pollEvent())
@@ -176,7 +178,7 @@ int main()
 
         ImGui::Begin("Configuration");
         ImGui::SeparatorText("Change speed");
-        if (ImGui::CollapsingHeader("Select a planet")) {
+        if (ImGui::CollapsingHeader("Change individual speed")) {
             if (ImGui::CollapsingHeader("Mercury")) {
                 ImGui::SliderFloat("Set speed##Mercury", &mercury.getSpeed(), 0, 1.f);
             }
@@ -211,7 +213,22 @@ int main()
 
         }
 
-        ImGui::SeparatorText("Other settings");
+        ImGui::Separator();
+
+        if (ImGui::SliderFloat("Set speed for all planets", &planetSpeed, 0, 1.f)) {
+            for (Planet* planet : planets) {
+                planet->setSpeed(planetSpeed);
+            }
+        }
+
+        if (ImGui::Button("Normalize speeds")) {
+            planetSpeed = DEFAULT_SPEED;
+            for (Planet* planet : planets) {
+                planet->setSpeed(DEFAULT_SPEED);
+            }
+        }
+
+        ImGui::SeparatorText("Miscellaneous");
 
         ImGui::SliderFloat("Zoom in/out", &zoom, 0, 4.f);
 
@@ -231,12 +248,6 @@ int main()
             }
 
             backGround.setScale({ 1.f,1.f });
-        }
-
-        if (ImGui::Button("Normalize speeds")) {
-            for (Planet* planet : planets) {
-                planet->setSpeed(DEFAULT_SPEED);
-            }
         }
 
         if (ImGui::Button("Pause")) {
@@ -292,6 +303,8 @@ int main()
         ImGui::SFML::Render(window);
         window.display();
     }
+
+    system("pause");
 }
 
 
