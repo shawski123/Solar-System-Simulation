@@ -1,0 +1,17 @@
+﻿  Source.cpp
+C:\Users\Sean Toomey\source\repos\SFMLSolarSystem\libraries\include\SFML\System\Exception.hpp(41,47): warning C4275: non dll-interface class 'std::runtime_error' used as base for dll-interface class 'sf::Exception'
+  (compiling source file 'Source.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\stdexcept(100,30):
+      see declaration of 'std::runtime_error'
+      C:\Users\Sean Toomey\source\repos\SFMLSolarSystem\libraries\include\SFML\System\Exception.hpp(41,23):
+      see declaration of 'sf::Exception'
+  
+C:\Users\Sean Toomey\source\repos\SFMLSolarSystem\Source.cpp(81,22): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\Sean Toomey\source\repos\SFMLSolarSystem\Source.cpp(89,26): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\Sean Toomey\source\repos\SFMLSolarSystem\Source.cpp(110,25): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  Generating code
+  1 of 2455 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    35 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  SFMLSolarSystem.vcxproj -> C:\Users\Sean Toomey\source\repos\SFMLSolarSystem\x64\Release\SFMLSolarSystem.exe
