@@ -307,8 +307,6 @@ int main()
         ImGui::SFML::Render(window);
         window.display();
     }
-
-    system("pause");
 }
 
 
