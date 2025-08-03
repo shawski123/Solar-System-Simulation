@@ -40,6 +40,8 @@ Index of this file:
 #define IMGUI_DEFINE_MATH_OPERATORS
 #endif
 
+#define STB_TEXT_HAS_SELECTION(s) ((s)->select_start != (s)->select_end)
+
 #include "imgui.h"
 #ifndef IMGUI_DISABLE
 #include "imgui_internal.h"

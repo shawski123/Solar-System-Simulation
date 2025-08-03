@@ -215,7 +215,8 @@ int main()
 
         ImGui::Separator();
 
-        if (ImGui::SliderFloat("Set speed for all planets", &planetSpeed, 0, 1.f)) {
+        ImGui::Text("Set speed for all planets");
+        if (ImGui::SliderFloat("", &planetSpeed, 0, 1.f)) {
             for (Planet* planet : planets) {
                 planet->setSpeed(planetSpeed);
             }
@@ -228,7 +229,7 @@ int main()
             }
         }
 
-        ImGui::SeparatorText("Miscellaneous");
+        ImGui::SeparatorText("Zoom");
 
         ImGui::SliderFloat("Zoom in/out", &zoom, 0, 4.f);
 
@@ -250,11 +251,14 @@ int main()
             backGround.setScale({ 1.f,1.f });
         }
 
+        ImGui::SeparatorText("Other settings");
+
         if (ImGui::Button("Pause")) {
             for (Planet* planet : planets) {
                 planet->setSpeed(0);
             }
         }
+
 
         if (ImGui::Button("Change ambience")) {
             musicIndex++;
